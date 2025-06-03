@@ -1,0 +1,32 @@
+path: C:/Users/aslin/OneDrive/Desktop/PROJECT_YOLO/yolo/dataset
+train: C:/Users/aslin/OneDrive/Desktop/PROJECT_YOLO/yolo/dataset/train/images
+val: C:/Users/aslin/OneDrive/Desktop/PROJECT_YOLO/yolo/dataset/valid/images
+test: C:/Users/aslin/OneDrive/Desktop/PROJECT_YOLO/yolo/dataset/test/images
+
+nc: 2
+names: ["inorganic", "organic"]
+
+roboflow:
+  workspace: itchdominic
+  project: organic-e-inorganic
+  version: 27
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/itchdominic/organic-e-inorganic/dataset/27
+
+# Training parameters (YOLOv8 specific)
+# Optional class weights if imbalance exists (inorganic, organic)
+weights: [0.7, 0.3] # Adjust based on your dataset statistics
+
+# Image channels (3 for RGB, 1 for grayscale)
+channels: 3
+
+# Recommended augmentation settings
+augmentation:
+  hsv_h: 0.015 # Hue variation
+  hsv_s: 0.7 # Saturation
+  hsv_v: 0.4 # Value
+  degrees: 45 # Rotation
+  fliplr: 0.5 # Horizontal flip
+  mixup: 0.2 # Helps with overlapping objects
+  mosaic: 0.5 # Helps with small objects
+  copy_paste: 0.3 # Helps with occlusion
